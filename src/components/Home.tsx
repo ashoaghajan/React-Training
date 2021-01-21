@@ -8,13 +8,13 @@ export interface HomeProps {
  
 const Home: React.SFC<HomeProps> = () => {
 
-    const { error, loading, data } = useFetch('http://localhost:8000/blogs');
+    const { error, loading, data: blogs } = useFetch('http://localhost:8000/blogs');
 
     return ( 
         <div className="home">
             {error && <div>{error}</div>}
             {loading && <div>Loading...</div>}
-            {data.length ? <BlogList blogs={data} title='All Blogs'/> : null}
+            {blogs && <BlogList blogs={blogs} title='All Blogs'/>}
         </div>
      );
 }

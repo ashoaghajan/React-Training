@@ -6,3 +6,9 @@ type Blog =  {
     author: string;
     id: number;
 }
+
+type BlogFetchData = { 
+    error: string, 
+    loading: boolean, 
+    data: Blog  
+}
