@@ -1,5 +1,5 @@
 import React from 'react';
-import BlogList from './BlogList';
+import BlogList from './Blog/BlogList';
 import { useFetch } from '../hooks/useFetch';
 import { postUrl } from '../global/globalVariables';
 

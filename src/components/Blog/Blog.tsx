@@ -9,7 +9,7 @@ const Blog: React.SFC<BlogProps> = ({ blog }) => {
 
     return ( 
         <div className="blog-preview">
-            <Link to={`/${blog.id}`}>
+            <Link to={`/blog/${blog.id}`}>
                 <h2>{blog.title}</h2>
                 <p>Written by {blog.author}</p>
             </Link>

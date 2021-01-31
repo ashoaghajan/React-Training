@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
-import { useFetch } from '../hooks/useFetch';
-import { postUrl } from '../global/globalVariables';
-import { delete_data } from '../api/blogsApi';
+import { useFetch } from '../../hooks/useFetch';
+import { postUrl } from '../../global/globalVariables';
+import { delete_data } from '../../api/blogsApi';
 
 export interface BlogDetailsProps { 
 

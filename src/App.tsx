@@ -2,7 +2,8 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Create from './components/Create';
-import BlogDetails from './components/BlogDetails';
+import BlogDetails from './components/Blog/BlogDetails';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
         <div className="content">
           <Switch>
             <Route exact path='/' component={Home}/>
-            <Route path='/create' component={Create}/>
-            <Route path='/:id' component={BlogDetails}/>
+            <Route exact path='/create' component={Create}/>
+            <Route exact path='/blog/:id' component={BlogDetails}/>
+            <Route path='*' component={NotFound}/>
           </Switch>
         </div>
       </div> 
