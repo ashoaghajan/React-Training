@@ -1,6 +1,7 @@
 import React from 'react';
 import BlogList from './BlogList';
 import { useFetch } from '../hooks/useFetch';
+import { postUrl } from '../global/globalVariables';
 
 export interface HomeProps {
     
@@ -8,7 +9,7 @@ export interface HomeProps {
  
 const Home: React.SFC<HomeProps> = () => {
 
-    const { error, loading, data: blogs } = useFetch('http://localhost:8000/blogs');
+    const { error, loading, data: blogs } = useFetch(postUrl);
 
     return ( 
         <div className="home">

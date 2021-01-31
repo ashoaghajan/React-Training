@@ -13,6 +13,11 @@ export const post_data = async(url: string, body: any) => {
     return data
 }
 
+export const delete_data = async(url: string, id: number) => {
+    const { data } = await axios.delete(`${url}/${id}`);
+    return data
+}
+
 export const cancel_req = () => {
     signal.cancel("axios request cancelled");
 }

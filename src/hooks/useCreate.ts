@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { post_data } from '../api/blogsApi';
+import { postUrl } from '../global/globalVariables';
 
 export const useCreate = () => {
     const authors = ['Mario', 'Yoshi', "Luigi"];
@@ -23,12 +24,17 @@ export const useCreate = () => {
         setLoading(true);
 
         const postData = async() => {
-            await post_data('http://localhost:8000/blogs', blog);
-            setLoading(false);
-            history.push('/');
+            try{
+                await post_data(postUrl, blog);
+                setLoading(false);
+                history.push('/');
+            }
+            catch(err){
+                console.log(err)
+            }
         }
 
-        setTimeout(() => postData(), 1000);
+        setTimeout(() => postData(), 500);
     }
 
     return { handleChange, handleSubmit, blog, authors, loading }

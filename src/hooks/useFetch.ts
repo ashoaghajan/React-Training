@@ -29,7 +29,7 @@ export const useFetch = (url: string) => {
             }
         }
 
-        setTimeout(() => getData(), 1000);
+        setTimeout(() => getData(), 500);
 
         return () => cancel_req();
         // eslint-disable-next-line

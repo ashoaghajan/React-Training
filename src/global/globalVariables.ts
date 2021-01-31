@@ -1,0 +1,1 @@
+export const postUrl = 'http://localhost:8000/blogs';
